@@ -1,0 +1,8 @@
+<%= render :partial => 'tabs', :object => 'Mixes' -%>
+<div id="tab"><div id="list"><ul id=listul>
+<% @albums.each do |album| -%>
+<%= tag('li', :id => 'B'+album[1].to_s) -%>
+<%= render :partial => 'sublist', :object => {:title => album, :type => 'B'} -%></li>
+<% end -%>
+</ul></div></div>
+<br />

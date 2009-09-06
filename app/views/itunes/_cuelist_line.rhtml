@@ -1,0 +1,7 @@
+<div <%= 'class="cuealbum"' if cuelist_line[:count] > 1 %>,
+	title="<%=cuelist_line[:artist]+': '+cuelist_line[:album] %>">
+	<%=cuelist_line[:name] || cuelist_line[:album]%>
+	<%="("+cuelist_line[:count].to_s+")" if cuelist_line[:count] > 1%>
+	<%='('+(cuelist_line[:duration]/60).to_s+':'+
+		sprintf('%02d', cuelist_line[:duration]%60)+')'%><br />
+</div>

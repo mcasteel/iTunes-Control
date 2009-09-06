@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Itunes: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'iTunes' %>
+  <%= javascript_include_tag 'prototype.js', 'effects.js', 'prototype.improvements.js', 'HelpBalloon.js', 'application.js' %>
+<script type="text/javascript" charset="utf-8">
+	Event.observe(window, 'load', function() {
+	  Event.observe('list', 'click', handleClick);
+	  Event.observe('list', 'mouseover', handleOver);
+	  Event.observe('list', 'mouseout', handleOut);
+	});
+</script></head>
+<body id='iTunes'>
+	<div id='columns'>
+		<div id='side'>
+			<div id="status">
+				<%= render(:partial => "status", :object => @state)%>
+			</div>
+		</div>
+		<div id='main'>
+			<%= yield :layout %>
+		</div>
+	</div>
+</body>
+</html>

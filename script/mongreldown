@@ -1,0 +1,2 @@
+#!/bin/bash
+mongrel_rails cluster::stop -C /Library/itc/current/config/mongrel_cluster.yml

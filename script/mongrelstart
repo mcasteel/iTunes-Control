@@ -1,0 +1,5 @@
+tell application "Finder"
+set thefile to posix file "/Library/itc/current/script/mongrelup" as alias
+set theapp to posix file "/Applications/Utilities/Terminal.app" as alias
+open thefile using theapp
+end tell

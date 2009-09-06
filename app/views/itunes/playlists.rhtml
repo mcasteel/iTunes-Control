@@ -1,0 +1,8 @@
+<%= render :partial => 'tabs', :object => 'Playlists' -%>
+<div id="tab"><div id="list"><ul id=listul>
+<% @playlists.each do |playlist| -%>
+<%= tag('li', {:id => 'P'+playlist[1].to_s}, true) -%>
+<%= render :partial => 'sublist', :object => {:title => playlist, :type => 'P'} -%></li>
+<% end -%>
+</ul></div></div>
+<br />

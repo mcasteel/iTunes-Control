@@ -1,0 +1,14 @@
+<% if sublist[:list].nil? -%>
+<%= linkIfUpdatable(sublist) -%>
+<%= '<span>&nbsp;&#9021;</span>' if sublist[:type]=='B' -%>
+<% else -%>
+<%=	link_to('&#9660; ', '#', {:class=>'open'}) + goIfType(sublist) -%>
+<ul class='sublist'>
+<% for element in sublist[:list]-%>
+<%= liIfTyped(sublist[:subtype], element[1].to_s) -%>
+<%= linkIfUpdatable({:title => element, :type => sublist[:subtype]}) -%>
+<%= '<span>&nbsp;&#9021;</span>' -%>
+</li>
+<% end -%>
+</ul>
+<% end -%>

@@ -1,0 +1,2 @@
+#!/bin/bash
+mongrel_rails cluster::start --clean -C /Library/itc/current/config/mongrel_cluster.yml

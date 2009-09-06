@@ -1,0 +1,3 @@
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title><%= details[:artistName]-%></title><%= trackDetails(details)-%>
+<b><%= details[:albumName]+yearIf(details[:albumYear])-%></b><br><%= details[:genre]%><br><%= details[:albumTracks].to_s + ' tracks, ' + mmss(details[:albumDuration])-%>

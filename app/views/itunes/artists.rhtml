@@ -1,0 +1,8 @@
+<%= render :partial => 'tabs', :object => 'Artists' -%>
+<div id="tab"><div id="list"><ul id="listul">
+<% @artists.each do |artist| -%>
+<%= tag('li', {:id => 'A'+artist[1].to_s}, true) -%>
+<%= render :partial => 'sublist', :object => {:title => artist, :type => 'A'} -%></li>
+<% end -%>
+</ul></div></div>
+<br />

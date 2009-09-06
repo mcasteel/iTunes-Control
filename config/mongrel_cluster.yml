@@ -1,0 +1,8 @@
+--- 
+cwd: /Library/itc/current
+log_file: log/mongrel.log
+port: "8000"
+environment: production
+address: 0.0.0.0
+pid_file: /Library/itc/shared/pids/mongrel.pid
+servers: 1

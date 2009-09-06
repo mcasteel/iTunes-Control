@@ -1,0 +1,10 @@
+(*tell application "Finder"
+display dialog "Power off"
+end tell*)
+tell application "iRed"
+send ir Code "12v2-" of RC "AVP"
+send ir Code "12v2-" of RC "AVP"
+delay 1
+send ir Code "Off" of RC "AVP"
+send ir Code "Off" of RC "AVP"
+end tell

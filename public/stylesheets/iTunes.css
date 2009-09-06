@@ -1,0 +1,89 @@
+#tab {
+	height: 594px;
+	background: #ffa07a;
+	padding: 0px;
+	padding-left: 0px;
+	padding-top: 6px;
+	font-family: "Courier", serif;
+	font-size: 12px;
+	border: 1px solid red
+}
+#columns {
+	padding: 0px;
+	margin: 0px;
+}
+#list {
+	background: white;
+	width: 480px; height: 582px; overflow: auto;
+	padding: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	font-family: "Courier", serif;
+	font-size: 12px;
+	border: 2px solid #aaa;
+}
+#list a {
+	text-decoration: none;
+	outline: none;
+}
+ul.sublist {
+	list-style-type: none;
+	padding-left: 1em;
+	font-family: "Times", serif;
+}
+#listul {
+	list-style-type: none;
+	padding: 0px;
+	margin-top: 0px;
+}
+#list li > a:first-child {
+	font-family: "Lucida Grande";
+	font-size: 10px;
+}
+
+#list li span {
+	cursor: help;
+}
+#side {
+	float: left;
+	padding-top: 8px;
+	padding-left: 4px;
+	padding-bottom: 1em;
+	margin-right: 6px;
+	width: 260px;
+	background: #afeeee;
+	height: 596px;
+	border: 1px solid #40e0d0
+}
+div#current_state { font-family: Helvetica; font-size: medium; margin-top: 8px;}
+
+#status {
+	font-size: small;
+}
+#cuelist { font-family: Helvetica; padding-top: 8px; cursor: default; padding-bottom: 8px;}
+div.cuealbum { font-weight: bold;}
+
+div#Transport  {
+	display: inline;
+	padding-top: 0px;
+	padding-right: 10px;
+	float: right }
+
+#buttons {
+}
+ul#tabnav    { font: bold 14px Helvetica, Arial, sans-serif;
+list-style-type: none; margin: 0; padding-bottom: 20px; padding-left: 0;
+}
+ul#tabnav li { background-color: #ffe0cf; margin: 0px 1px 0; padding: 0;
+width: 64px; height: 19px; display: inline; float: left; border: solid 1px red
+}
+ul#tabnav li#curtab { background-color: #ffa07a;
+border-bottom: 1px solid #ffa07a;
+}
+#tabnav a   { color: #444; text-decoration: none; visibility: visible;
+display: block; padding: 4px; width: 54px; float: left; padding-bottom: 0px;
+text-align: center;
+}
+img {
+	border: none;
+}

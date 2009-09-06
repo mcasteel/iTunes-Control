@@ -1,0 +1,45 @@
+<div id="Transport", class="Controls"> 
+	<%= link_to_remote(image_tag("skipBackward.enabled.gif",
+		{:size=>'24x24', :title => 'Skip back 1 track'}),
+		:url => { :controller => 'itunes', :action => 'prevTrack'},
+		:update => 'status') %>
+	<%= link_to_remote(image_tag("skipForward.enabled.gif",
+		{:size=>'24x24', :title => 'Skip forward 1 track'}),
+		:url => { :controller => 'itunes', :action => 'nextTrack' },
+		:update => 'status') %>
+	<%= if status[:state] == 'Playing'
+		theLink = 'pause.enabled.gif'
+		theTitle = 'Pause'
+	else
+		theLink = 'play.enabled.gif'
+		theTitle = 'Play'
+	end
+	link_to_remote(image_tag(theLink, {:size=>'24x24', :title=>theTitle}),
+		:url => { :controller => 'itunes', :action => 'playPause'},
+		:update => 'status') %>
+</div>
+<div id="Power", class="Controls">
+	<%= link_to_remote(image_tag("powerOff.gif", {:size=>'24x24', :title=>'Power Off'}),
+		:url => { :controller => 'itunes', :action => 'powerOff'},
+		:update => 'status') %>
+	<%= link_to_remote(image_tag("powerOn.gif", {:size=>'24x24', :title=>'Power On'}),
+		:url => { :controller => 'itunes', :action => 'powerOn'},
+		:update => 'status') %>
+</div>
+<div id="current_state"><%=status[:state]%> <%=whatsPlaying(status)%></div>
+<div id="cuelist">
+	<% for line in status[:cuelist]%>
+	<%=render :partial => "cuelist_line", :object => line %>
+	<% end%>
+	<br />
+<table><tr><td>
+<% form_remote_tag :url => { :action => :clear }, :update => 'status' do %>
+<%= submit_tag("Clear") if status[:cuelist].length > 0%>
+<% end %></td><td>
+<% form_remote_tag :url => { :action => :updateStatus }, :update => 'status', :method => 'GET' do %>
+<%= submit_tag("Update") if status[:cuelist].length > 0%>
+<% end %></td></tr></table>
+</div>
+<script type="text/javascript" charset="utf-8">
+<%= setupRefresh(status[:timeleft]) if status[:cuelist].length > 0 -%>
+</script>

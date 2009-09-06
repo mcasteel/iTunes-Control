@@ -1,0 +1,18 @@
+(*tell application "Finder"
+display dialog "Power on"
+end tell*)
+tell application "iRed"
+send ir Code "On" of RC "AVP"
+delay 1
+send ir Code "Remote" of RC "AVP"
+send ir Code "Remote" of RC "AVP"
+delay 1
+send ir Code "iTunes" of RC "AVP"
+send ir Code "iTunes" of RC "AVP"
+delay 1
+send ir Code "12v2+" of RC "AVP"
+send ir Code "12v2+" of RC "AVP"
+delay 1
+send ir Code "12v2+" of RC "AVP"
+send ir Code "12v2+" of RC "AVP"
+end tell
