@@ -2,7 +2,9 @@
 #
 #  Created by Michael Casteel on 2007-08-28.
 #  Copyright (c) 2007. All rights reserved.
-require 'lib/itcmonitor'
+require 'lib/itc'
 
 puts `pwd`
-ITCMonitor.start
+puts ITC.getStatusText
+puts ITC.getCurrent
+puts ITC.getTimeLeft

@@ -10,7 +10,7 @@ class ItunesController < ApplicationController
 # in a track or tracks from a soundtrack album will not be listed.
   
   def index
-    @artists = Artist.find(:all, :conditions => 'compilation = false', :order => "artistName").map {|a| [a.artistName, a.id]}
+    @artists = Artist.find(:all, :conditions => 'compilation = "f"', :order => "artistName").map {|a| [a.artistName, a.id]}
     @state = currentState
     render :action => 'artists'
   end
@@ -26,14 +26,14 @@ class ItunesController < ApplicationController
 # This method displays all albums which are not compilations.
 
   def albums
-    @albums = Album.find(:all, :conditions => 'compilation = false', :order => "albumName").map {|a| [a.albumName, a.id]}
+    @albums = Album.find(:all, :conditions => 'compilation = "f"', :order => "albumName").map {|a| [a.albumName, a.id]}
     @state = currentState
   end
 
 # This method displays all albums which are compilations.
   
   def compilations
-    @albums = Album.find(:all, :conditions => 'compilation = true', :order => "albumName").map {|a| [a.albumName, a.id]}
+    @albums = Album.find(:all, :conditions => 'compilation = "t"', :order => "albumName").map {|a| [a.albumName, a.id]}
     @state = currentState
   end
 
