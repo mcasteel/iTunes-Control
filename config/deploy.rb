@@ -12,7 +12,8 @@ require 'mongrel_cluster/recipes'
 # form the root of the application path.
 
 set :application, "iTunesControl"
-set :repository, "/Users/cvsroot"
+set :repository, "ssh://condomac/gitrepos/itunes.git"
+# set :repository, "/Users/cvsroot"
 # set :repository, ":ext:mac@condomac:/users/cvsroot"
 set :deploy_to, "/Library/itc"
 set :mongrel_conf, "#{current_path}/config/mongrel_cluster.yml"
@@ -38,11 +39,16 @@ role :db,  "condomac", :primary => true
 # =============================================================================
 # set :deploy_to, "/path/to/app" # defaults to "/u/apps/#{application}"
 # set :user, "flippy"            # defaults to the currently logged in user
-set :scm, :cvs               # defaults to :subversion
+set :scm, :git
+set :branch, "master"
+# set :scm, :cvs               # defaults to :subversion
 # set :svn, "/path/to/svn"       # defaults to searching the PATH
 # set :darcs, "/path/to/darcs"   # defaults to searching the PATH
 # set :cvs, "/path/to/cvs"       # defaults to searching the PATH
 # set :gateway, "gate.host.com"  # default to no gateway
+depend :remote, :gem, "rb-appscript", ">0.5.1"
+depend :remote, :gem, "sqlite3-ruby", ">1.2"
+depend :remote, :gem, "mysql", ">2.8"
 
 # =============================================================================
 # SSH OPTIONS
