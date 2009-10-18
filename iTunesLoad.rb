@@ -23,7 +23,7 @@ Genre.delete_all
 puts('...Deleted')
 
 parser = TunesParser.new
-file = File.new('/Volumes/Schwarzbuch HD/Users/mac/Music/iTunes/iTunes Music Library.xml')
+file = File.new(File::expand_path('~/Music/iTunes/iTunes Music Library.xml'))
 #file = File.new('/Users/mac/Music/iTunes/iTunes Music Library.xml')
 #file = File.new('test.xml')
 puts('Parsing xml file...')
