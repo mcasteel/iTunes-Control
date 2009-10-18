@@ -48,7 +48,6 @@ set :branch, "master"
 # set :gateway, "gate.host.com"  # default to no gateway
 depend :remote, :gem, "rb-appscript", ">0.5.1"
 depend :remote, :gem, "sqlite3-ruby", ">1.2"
-depend :remote, :gem, "mysql", ">2.8"
 
 # =============================================================================
 # SSH OPTIONS
