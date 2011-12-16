@@ -12,7 +12,7 @@ require 'mongrel_cluster/recipes'
 # form the root of the application path.
 
 set :application, "iTunesControl"
-set :repository, "ssh://condomac/gitrepos/itunes.git"
+set :repository, "ssh://condomac.local/gitrepos/itunes.git"
 # set :repository, "/Users/cvsroot"
 # set :repository, ":ext:mac@condomac:/users/cvsroot"
 set :deploy_to, "/Library/itc"
@@ -30,9 +30,9 @@ set :scm_module, 'iTunesControl'
 # be used to single out a specific subset of boxes in a particular role, like
 # :primary => true.
 
-role :web, "condomac"
-role :app, "condomac"
-role :db,  "condomac", :primary => true
+role :web, "condomac.local"
+role :app, "condomac.local"
+role :db,  "condomac.local", :primary => true
 
 # =============================================================================
 # OPTIONAL VARIABLES
