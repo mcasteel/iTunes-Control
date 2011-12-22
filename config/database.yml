@@ -13,4 +13,4 @@ test:
 
 production:
   adapter: sqlite3
-  database: itcdb
+  database: /Library/itc/itcdb
